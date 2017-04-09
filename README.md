@@ -2,7 +2,7 @@
 CS132 Spring 2017 Security Lab
 
 ## Phase 2: Configuration
-Before reading this README, please make sure you've completed the instructions on Prelab 2 Phase 1. As a reminder, that phase introduced you to the VM where your application will be running on. It was also during that phase where you've cloned this directory.
+Before reading this README, please make sure you've completed the instructions on Prelab 2 Phase 1. As a reminder, that phase introduced you to the VM where your application will be running on. It was also during that phase where you've forked this directory.
 
 This part is very important, and you should do this portion of the lab carefully to ensure that your server will be running smoothly (until some other group attacks it of course!).
 
