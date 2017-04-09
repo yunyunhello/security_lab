@@ -49,7 +49,7 @@ In particular, there are two files that you'll want to configure: _config.js_ an
    You should see 3 entries.
 
 ### Saving your Settings
-In the event that your application has been hacked, you'll have to restart your application from scratch. If you don't want to go through the entire configuration process again, create your separate  git repository, and push all the files there. Then, whenever you've been attacked, restarting the application is a matter of just pulling from your git repo, and re-running the create.sql script.
+In the event that your application has been hacked, you'll have to restart your application from scratch. If you don't want to go through the entire configuration process again, push all these changes to the forked repository. Then, whenever you've been attacked, restarting the application is a matter of just pulling from your git repo, and re-running the create.sql script.
 
 ### Running Your Application
 1. Navigate back to the application project root.
