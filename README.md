@@ -27,10 +27,10 @@ In particular, there are two files that you'll want to configure: _config.js_ an
 2. Change Change __**USER_NAME, PASSWORD**__ to the credentials that you've received in our email. **PLEASE NOTE THE LACK OF SPACING BETWEEN p and your PASSWORD.**
 
 3. Navigate to __**lines 4, 8, 10, and 11**__
-   * > 4) set db = DATABASE_NAME
-   * > 8) DROP DATABASE DATABASE_NAME;
-   * > 10) CREATE DATABASE DATABASE_NAME;
-   * > 11) USE DATABASE_NAME;
+   * > line 4: set db = DATABASE_NAME
+   * > line 8: DROP DATABASE DATABASE_NAME;
+   * > line 10: CREATE DATABASE DATABASE_NAME;
+   * > line 11: USE DATABASE_NAME;
 
    For each of these lines, change __**DATABASE_NAME**__ to the database name that you've received in your email.
 
