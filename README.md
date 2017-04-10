@@ -71,6 +71,7 @@ In the event that your application has been hacked, you'll have to restart your 
    * underscore
 3. Run
 > node server.js
+
 > chromium &
 
 4. Navigate to 'localhost:PORT' where PORT is the port number you've configured previously.
