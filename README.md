@@ -1,5 +1,5 @@
 # security_lab
-CS132 Spring 2017 Security Lab
+CS132 Spring 2019 Security Lab
 
 ## Phase 2: Configuration
 Before reading this README, please make sure you've completed the instructions on Prelab 2 Phase 1. As a reminder, that phase introduced you to the VM where your application will be running on. It was also during that phase where you've forked this directory.

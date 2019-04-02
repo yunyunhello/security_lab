@@ -10,6 +10,7 @@
 /*										*/
 /********************************************************************************/
 
+require("dotenv").config()
 var express = require("express");
 var favicon = require("serve-favicon");
 var bodyParser = require("body-parser");
@@ -22,14 +23,13 @@ var marked = require("marked");
 
 var logger = require("morgan");
 
-var config = require("./config.js");
 var sessionmanager = require("./session.js");
 var profile = require("./profile.js");
 var contributions = require("./contributions.js");
 var benefits = require("./benefits.js");
 var allocations = require("./allocations.js");
 var memos = require("./memos.js");
- 
+
 
 
 
@@ -48,8 +48,8 @@ function setup()
 
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({ extended: false }));
-   
-   app.use(session({ secret: config.COOKIE_SECRET,
+
+   app.use(session({ secret: process.env.COOKIE_SECRET,
 		     saveUninitialized: true,
 		     resave: true }));
 
@@ -59,9 +59,9 @@ function setup()
    app.set("views", __dirname + "/app/views");
 
    app.use(express.static(__dirname + "/app/assets"));
-   
+
    app.use(logger('combined'));
-   
+
    // intialize marked library
    marked.setOptions({ });
    app.locals.marked = marked;
@@ -124,10 +124,9 @@ function setup()
 	 autoescape: false
     });
 
-   var port = config.PORT;
-   var server = app.listen(port);
+   var server = app.listen(8080);
 
-   console.log("Listening on " + port);
+   console.log("Listening on " + 8080);
 }
 
 

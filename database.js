@@ -6,11 +6,8 @@
 /*										*/
 /********************************************************************************/
 
-
+require("dotenv").config()
 var adb = require("any-db");
-
-var config = require("./config.js");
-
 
 
 /********************************************************************************/
@@ -19,7 +16,7 @@ var config = require("./config.js");
 /*										*/
 /********************************************************************************/
 
-var pool = adb.createPool(config.DB_CONNECT,{ min : 1, max : 4 });
+var pool = adb.createPool(process.env.DB_CONNECT,{ min : 1, max : 4 });
 
 
 
@@ -66,7 +63,7 @@ function callback(next)
 
 function fixQuery(q)
 {
-   if (config.DB_CONNECT.substring(0,5) == "mysql") {
+   if (process.env.DB_CONNECT.substring(0,5) == "mysql") {
       q = q.replace(/\$\d+/g,"?");
     }
 
@@ -87,4 +84,3 @@ exports.query = query;
 
 
 /* end of database.js */
-
