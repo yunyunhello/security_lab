@@ -1,5 +1,5 @@
 /$# /bin/csh -f
--- 
+--
 -- set mysqlargs = "-h localhost -u USERNAME -pPASSWORD"
 -- set db = DATABASE_NAME
 --
@@ -8,7 +8,7 @@
 -- DROP DATABASE DATABASE_NAME;
 --
 -- CREATE DATABASE DATABASE_NAME;
-USE DATABASE_NAME;
+USE test;
 
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Allocations;
