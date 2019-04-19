@@ -50,11 +50,6 @@ function setup()
    app.use(bodyParser.urlencoded({ extended: false }));
 
    app.use(session({ secret: process.env.COOKIE_SECRET,
-           key: "sessionId",
-           cookie: {
-                httpOnly: true,
-                secure: true
-           },
 		     saveUninitialized: true,
 		     resave: true }));
 
