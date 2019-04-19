@@ -54,7 +54,7 @@ function setup()
            cookie: {
                 httpOnly: true,
                 secure: true
-           }
+           },
 		     saveUninitialized: true,
 		     resave: true }));
 
