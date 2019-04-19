@@ -47,10 +47,7 @@ function displayBenefits1(req,res,next,succ,err,data)
 
    for (var i = 0; i < data.rows.length; ++i) {
        var date = data.rows[i].benefitStartDate;
-       var month = 0;
-       if (date.getMonth()) {
-          month = date.getMonth();
-       }
+       console.log("date", date);
        var mon = date.getMonth() + 1;
        if (mon < 10) mon = "0"+mon;
        var string = date.getFullYear() + "-" + mon + "-" + date.getDate();
