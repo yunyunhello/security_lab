@@ -50,6 +50,11 @@ function setup()
    app.use(bodyParser.urlencoded({ extended: false }));
 
    app.use(session({ secret: process.env.COOKIE_SECRET,
+           key: "sessionId",
+           cookie: {
+                httpOnly: true,
+                secure: true
+           }
 		     saveUninitialized: true,
 		     resave: true }));
 
@@ -122,7 +127,25 @@ function setup()
    // Template system setup
    swig.setDefaults({
 	 autoescape: false
-    });
+   });
+
+   // Prevent opening page in frame or iframe to protect from clickjacking
+   app.disable("x-powered-by");
+
+   // Prevent opening page in frame or iframe to protect from clickjacking
+   app.use(helmet.xframe());
+
+   // Prevents browser from caching and storing page
+   app.use(helmet.noCache());
+
+   // Allow loading resources only from white-listed domains
+   app.use(helmet.csp());
+
+   // Allow communication only on HTTPS
+   app.use(helmet.hsts());
+
+   // Forces browser to only use the Content-Type set in the response header instead of sniffing or guessing it
+   app.use(nosniff()); 
 
    var server = app.listen(8080);
 
