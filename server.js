@@ -132,9 +132,6 @@ function setup()
    // Prevent opening page in frame or iframe to protect from clickjacking
    app.disable("x-powered-by");
 
-   // Forces browser to only use the Content-Type set in the response header instead of sniffing or guessing it
-   app.use(nosniff()); 
-
    var server = app.listen(8080);
 
    console.log("Listening on " + 8080);
