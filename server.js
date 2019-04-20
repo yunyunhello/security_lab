@@ -66,8 +66,8 @@ function setup()
    marked.setOptions({ });
    app.locals.marked = marked;
 
-   var isAdmin = sessionmanager.isAdminUserMiddleware;
-   var isLoggedIn = sessionmanager.isLoggedInMiddleware;
+   // var isAdmin = sessionmanager.isAdminUserMiddleware;
+   // var isLoggedIn = sessionmanager.isLoggedInMiddleware;
    app.get("/", sessionmanager.displayWelcomePage);
 
    app.get("/login", sessionmanager.displayLoginPage);
@@ -102,8 +102,8 @@ function setup()
    app.post("/contributions", contributions.handleContributionsUpdate);
 
    // Benefits Page
-   app.get("/benefits", isLoggedIn, isAdmin, benefits.displayBenefits);
-   app.post("/benefits", isLoggedIn, isAdmin, benefits.updateBenefits);
+   app.get("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.displayBenefits);
+   app.post("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.updateBenefits);
 
    // Allocations Page
    app.get("/allocations/:userId", allocations.displayAllocations);
