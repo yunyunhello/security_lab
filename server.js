@@ -129,14 +129,6 @@ function setup()
    // Prevent opening page in frame or iframe to protect from clickjacking
    app.disable("x-powered-by");
 
-   //Enable Express csrf protection
-  app.use(express.csrf());
-
-  app.use(function(req, res, next) { 
-      res.locals.csrftoken = req.csrfToken(); 
-      next(); 
-  }); 
-
    var server = app.listen(8080);
 
    console.log("Listening on " + 8080);
