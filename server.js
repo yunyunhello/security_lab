@@ -103,7 +103,7 @@ function setup()
    app.post("/contributions", contributions.handleContributionsUpdate);
 
    // Benefits Page
-   aapp.get("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.displayBenefits);
+   app.get("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.displayBenefits);
    app.post("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.updateBenefits);
 
    // Allocations Page
