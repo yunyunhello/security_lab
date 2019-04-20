@@ -89,7 +89,7 @@ function setup()
 
    // anything below here requires login
    app.use(sessionmanager.isLoggedInMiddleware);
-   app.use(sessionmanager.isAdminUserMiddleware);
+   // app.use(sessionmanager.isAdminUserMiddleware);
 
    // The main page of the app
    app.get("/dashboard", sessionmanager.displayWelcomePage);
@@ -103,8 +103,8 @@ function setup()
    app.post("/contributions", contributions.handleContributionsUpdate);
 
    // Benefits Page
-   app.get("/benefits", benefits.displayBenefits);
-   app.post("/benefits", benefits.updateBenefits);
+   aapp.get("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.displayBenefits);
+   app.post("/benefits", sessionmanager.isLoggedInMiddleware, sessionmanager.isAdminUserMiddleware, benefits.updateBenefits);
 
    // Allocations Page
    app.get("/allocations/:userId", allocations.displayAllocations);
